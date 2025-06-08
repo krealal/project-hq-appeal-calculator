@@ -6,15 +6,15 @@ export interface Item {
   }
   
   export interface ColorQuantities {
-    readonly verde: number;
-    readonly azul: number;
-    readonly rojo: number;
+    readonly green: number;
+    readonly blue: number;
+    readonly red: number;
   }
   
   export interface ColorLimits {
-    readonly maxVerde: number;
-    readonly maxAzul: number;
-    readonly maxRojo: number;
+    readonly maxGreen: number;
+    readonly maxBlue: number;
+    readonly maxRed: number;
   }
   
   export interface ContainerResult {
