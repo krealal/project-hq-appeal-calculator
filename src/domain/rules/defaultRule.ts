@@ -5,18 +5,18 @@ const CONTAINER_CITIES = 7;
 const APPEAL_LIMIT = 1000;
 
 const expand = (items: Item[]): Item[] =>
-  items.filter(item => item.especial !== 'ESPECIAL').flatMap(item =>
-    Array.from({ length: item.cantidad }, () => ({
+  items.filter(item => item.special !== 'SPECIAL').flatMap(item =>
+    Array.from({ length: item.amount }, () => ({
       ...item,
-      cantidad: 1,
-      quantities: cloneQuantities(item.quantities)
+      amount: 1,
+      quantities: cloneQuantities(item.colorAmount)
     }))
   );
 
 export const defaultDistribution: DistributionRule = (items) => {
   const expanded = expand(items);
   const totals = expanded.reduce(
-    (accumulator, item) => addQuantities(accumulator, item.quantities),
+    (accumulator, item) => addQuantities(accumulator, item.colorAmount),
     { green: 0, blue: 0, red: 0 }
   );
 
@@ -34,7 +34,7 @@ export const defaultDistribution: DistributionRule = (items) => {
 
     return {
       containerId: `${containerIndex + 1}`,
-      quantities: { green, blue, red },
+      colorAmount: { green, blue, red },
       idsItems: {}
     };
   });
