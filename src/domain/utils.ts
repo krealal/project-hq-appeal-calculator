@@ -1,14 +1,14 @@
-import type { ColorQuantities, ColorLimits } from './models';
+import type { ColorAmount, ColorLimits } from './models';
 
-export const addQuantities = (a: ColorQuantities, b: ColorQuantities): ColorQuantities => ({
+export const addQuantities = (a: ColorAmount, b: ColorAmount): ColorAmount => ({
   green: a.green + b.green,
   blue:  a.blue  + b.blue,
   red:  a.red  + b.red,
 });
 
-export const cloneQuantities = (q: ColorQuantities): ColorQuantities => ({ ...q });
+export const cloneQuantities = (q: ColorAmount): ColorAmount => ({ ...q });
 
-export const withinLimits = (q: ColorQuantities, limits: ColorLimits): boolean =>
+export const withinLimits = (q: ColorAmount, limits: ColorLimits): boolean =>
   q.green <= limits.maxGreen &&
   q.blue   <= limits.maxBlue &&
   q.red   <= limits.maxRed;

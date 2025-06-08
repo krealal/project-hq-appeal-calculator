@@ -1,11 +1,11 @@
 export interface Item {
     readonly id: number;
-    readonly quantities: ColorQuantities;
-    readonly cantidad: number;
-    readonly especial?: string;
+    readonly colorAmount: ColorAmount;
+    readonly amount: number;
+    readonly special?: string;
   }
   
-  export interface ColorQuantities {
+  export interface ColorAmount {
     readonly green: number;
     readonly blue: number;
     readonly red: number;
@@ -19,7 +19,7 @@ export interface Item {
   
   export interface ContainerResult {
     readonly containerId: string;
-    readonly quantities: ColorQuantities;
+    readonly colorAmount: ColorAmount;
     readonly idsItems: Record<number, number>;
   }
   
